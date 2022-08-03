@@ -15,8 +15,8 @@
 
 #define STORE_FILE "store/dumpFile"
 
-std::mutex mtx;     // mutex for critical section
-std::string delimiter = ":";
+std::mutex mtx;     // mutex for critical section 关键部分的互斥锁
+std::string delimiter = ":"; // 分隔符
 
 //Class template to implement node
 template<typename K, typename V> 
@@ -36,7 +36,7 @@ public:
 
     void set_value(V);
     
-    // Linear array to hold pointers to next node of different level
+    // Linear array to hold pointers to next node of different level equals to the next pointer in the same level
     Node<K, V> **forward;
 
     int node_level;
